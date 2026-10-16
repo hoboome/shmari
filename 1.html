@@ -1,0 +1,122 @@
+<html>
+<head>
+<title> мой сайт </title>
+<style>
+h1 {
+color: pink;
+text-align: center;
+}
+.button-container {
+        display: flex;
+        justify-content: center; /* Выравнивание по центру */
+        margin-top: 20px;
+    }
+
+button {
+        background-color: pink; /* Розовый фон кнопки */
+	color: white;
+        border: none; /* Убираем стандартную рамку */
+        padding: 10px 20px; /* Отступы внутри кнопки */
+        border-radius: 5px; /* Закругленные углы */
+        cursor: pointer; /* Курсор в виде руки при наведении */
+        font-size: 16px;
+	font_weight: bold;
+        transition: all 0.3s ease; /* Плавность для анимации */
+        animation: pulse 2s infinite; /* Запускаем анимацию пульсации */
+    }
+button:hover {
+        background-color: hotpink; /* Более яркий розовый при наведении */
+        transform: scale(1.1); /* Увеличение кнопки */
+    }
+
+ @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+ #photo-list {
+        display: none; /* <--- ВОТ ЭТО ПРЯЧЕТ СПИСОК ПРИ ЗАГРУЗКЕ */
+        max-width: 800px;
+        margin: 30px auto; /* Центрируем блок */
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+.card {
+        display: flex; /* Выстраиваем фото и текст в ряд */
+        align-items: center; /* Выравниваем по вертикали */
+        margin-bottom: 20px;
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #eee;
+    }
+
+    /* Стиль для фото */
+    .card img {
+        width: 150px; /* Ширина фото */
+        height: 150px; /* Высота фото */
+        object-fit: cover; /* Чтобы фото не растягивалось */
+        border-radius: 8px;
+        margin-right: 20px; /* Отступ справа от фото */
+    }
+
+    /* Стиль для текста справа */
+    .card-info {
+        text-align: left;
+    }
+
+    .card-info h3 {
+        margin: 0 0 10px 0;
+        color: hotpink;
+    }
+
+    .card-info p {
+        margin: 0;
+        color: hotpink;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+</style>
+</head>
+<body>
+<center><h1>шмары кавердэнса</h1></center>
+<div class="button-container" id="button-box">
+        <button onclick="showList()">узнать кто шмара</button>
+</div>
+<div id="photo-list">
+    
+    <div class="card">
+        <img src="pickme.jpg" alt="Фото 1">
+        <div class="card-info">
+            <h3>лена хон хобуми</h3>
+            <p>-кошмарит апо уже месяц<br>
+	-назвала лемон тэнг пикми концептом<br>
+-пикми</p>
+        </div>
+    </div>
+
+   
+    <div class="card">
+        <img src="wonjin.jpg" alt="Фото 2">
+        <div class="card-info">
+            <h3>настя вонджиниха</h3>
+            <p>дура смотрит тайцев на репах</p>
+        </div>
+    </div>
+
+    
+</div>
+
+
+
+<script>
+function showList() {
+        document.getElementById('button-box').style.display = 'none';
+        
+        document.getElementById('photo-list').style.display = 'block';
+    }
+</script>
+</body>
+</html>
